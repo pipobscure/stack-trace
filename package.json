@@ -1,6 +1,6 @@
 {
 	"name": "@pipobscure/stack-trace",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Extract and augment errors with detailed stack-traces",
 	"type": "module",
 	"main": "dist/index.cjs",
