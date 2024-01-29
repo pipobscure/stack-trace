@@ -1,0 +1,44 @@
+{
+	"name": "@pipobscure/stack-trace",
+	"version": "0.0.0",
+	"description": "Extract and augment errors with detailed stack-traces",
+	"type": "module",
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
+	"types": "dist/index/d/ts",
+	"scripts": {
+		"test": "[ -d dist ] && node --test \"dist/**/*.test.js\"",
+		"format": "[ -f .prettierrc ] && [ -d src ] && prettier --write \"src/**/*.ts\" package.json tsconfig.*.json",
+		"lint": "[ -f .eslintrc.js ] && [ -d src ] && eslint --ext ts src",
+		"build:cjs": "[ -f tsconfig.cjs.json ]  && [ -d src ] && tsc --project ./tsconfig.cjs.json && ls dist/*.js | xargs node rename.mjs cjs",
+		"build:esm": "[ -f tsconfig.esm.json ]  && [ -d src ] && tsc --project ./tsconfig.esm.json && ls dist/*.js | xargs node rename.mjs mjs",
+		"build": "npm run build:cjs && npm run build:esm",
+		"postversion": "git push --follow-tags"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/pipobscure/stack-trace.git"
+	},
+	"keywords": [
+		"Error",
+		"Stack",
+		"Trace"
+	],
+	"contributors": [
+		{
+			"name": "Philipp Dunkel",
+			"email": "pip@pipobscure.com"
+		}
+	],
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^20.11.5",
+		"prettier": "^3.2.4",
+		"typescript": "^5.3.3",
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-prettier": "^5.1.3",
+		"@typescript-eslint/parser": "^6.19.0"
+	}
+}

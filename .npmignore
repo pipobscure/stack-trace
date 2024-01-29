@@ -1,0 +1,4 @@
+.*
+rename.mjs
+tsconfig.*.json
+src/
