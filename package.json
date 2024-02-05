@@ -5,7 +5,7 @@
 	"type": "module",
 	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
-	"types": "dist/index/d/ts",
+	"types": "dist/index.d.ts",
 	"scripts": {
 		"test": "[ -d dist ] && node --test \"dist/**/*.test.js\"",
 		"format": "[ -f .prettierrc ] && [ -d src ] && prettier --write \"src/**/*.ts\" package.json tsconfig.*.json",
