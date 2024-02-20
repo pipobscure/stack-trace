@@ -9,6 +9,7 @@ for (const file of process.argv.slice(3)) {
 	const dir = PATH.dirname(file);
 	const bas = PATH.basename(file, ext);
 	const nam = PATH.resolve(dir, `${bas}.${nxt}`);
+	console.error(`rename: ${file} -> ${nam}`);
 	FS.renameSync(file, nam);
 }
 
